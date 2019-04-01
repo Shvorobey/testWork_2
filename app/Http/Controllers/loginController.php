@@ -17,36 +17,21 @@ class loginController extends Controller
     {
         if ($request->method() == 'POST') {
             $this->validate($request, [
-                'email' => 'required | email | string | unique:users,email',
+                'email' => 'required | email | string ',
                 'password' => ' required | min: 6 | string',
             ]);
+            $email = $request->input('email');
+            $password = $request->input('password');
+            $user = User::where($email, '=', 'id' and $password, '=', 'password');
 
-
-
-
-
-
-            $user = new User();
-            $user->name = $request->input('name');
-            $user->email = $request->input('email');
-            $password_1 = $request->input('password_1');
-            $password_2 = $request->input('password_2');
-
-            if ($password_1 === $password_2) {
-                $user->password = $password_1;
-                try {
-                    $user->save();
-                } catch (\Exception $exception) {
-                    return Redirect::back()->withErrors([
-                        'errors' => $exception->getMessage()]);
-                }
+            if ($user != null) {
+                return redirect(route('admin'))->with(['user' => $user
+                ]);
             } else {
-                return Redirect::back()->withErrors([ 'Пароли не совподают']);
+                return redirect(route('login'))->withErrors(['Пароли не совподают']);
             }
-            return redirect(route('login'))->with([
-                'Спасибо за регистрацию. Введите имя и пароль чтобы войти'
-            ]);
 
         }
     }
 }
+
