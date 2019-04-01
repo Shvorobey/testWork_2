@@ -12,3 +12,7 @@
 */
 
 Route::get('/', function () { return view('index'); })->name('main');
+Route::post('/', '\\' . \App\Http\Controllers\saveFormController::class)->name('save_form');
+
+Route::get('/login', function () { return view('login'); })->name('login');
+Route::post('/login', '\\' . \App\Http\Controllers\saveFormController::class)->name('save_form');
