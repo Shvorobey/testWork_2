@@ -1,36 +1,35 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Admin
- * Date: 02.04.2019
- * Time: 2:16
- */
 
 namespace App\Http\Controllers;
 
 
+use App\User;
 use Illuminate\Http\Request;
+
+
 
 class loginController extends Controller
 {
     public function __invoke(Request $request)
     {
         if ($request->method() == 'POST') {
-            $this->validate($request, [
-                'email' => 'required | email | string ',
-                'password' => ' required | min: 6 | string',
-            ]);
+//            $this->validate($request, [
+//                'email' => 'required | email | string ',
+//                'password' => ' required | min: 6 | string',
+//            ]);
             $email = $request->input('email');
             $password = $request->input('password');
-            $user = User::where($email, '=', 'id' and $password, '=', 'password');
-
+            $user = User::where($email, '=', 'email' and $password, '=', 'password');
             if ($user != null) {
-                return redirect(route('admin'))->with(['user' => $user
+                session([
+                    'email' => $email,
+                    'password' => $password,
+
                 ]);
+                return redirect(route('admin'));
             } else {
                 return redirect(route('login'))->withErrors(['Пароли не совподают']);
             }
-
         }
     }
 }

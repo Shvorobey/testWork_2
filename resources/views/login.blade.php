@@ -9,19 +9,21 @@
         @include ('load')
 
         <form
-                method="POST"
+                method="POST" action = "{{route('check_login')}}"
                 enctype="multipart/form-data" style="margin: 50px auto">
             {{csrf_field()}}
             <div class="form-group">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                {{--@if ($errors->any())--}}
+                    {{--<div class="alert alert-danger">--}}
+                        {{--{{<li>$msg</li>}}--}}
+                        {{--<li>{{ $msg }}</li>--}}
+                        {{--<ul>--}}
+                            {{--@foreach ($errors->all() as $error)--}}
+                                {{--<li>{{ $error }}</li>--}}
+                            {{--@endforeach--}}
+                        {{--</ul>--}}
+                    {{--</div>--}}
+                {{--@endif--}}
 
                 <label for="exampleInputEmail">Введите Email:</label>
                 <input type="email" name="email" class="form-control" id="exampleInputEmail"
@@ -32,9 +34,9 @@
                 </small>
                 <br>
                 <label for="exampleInputPassword">Введите пароль:</label>
-                <input type="password" name="password_1" class="form-control" id="exampleInputPassword_1"
+                <input type="password" name="password" class="form-control" id="exampleInputPassword"
                        aria-describedby="passwordHelp"
-                       placeholder="**********" value="{{ old('password_1') }}"
+                       placeholder="**********" value="{{ old('password') }}"
                        required>
                 <small id="passwordHelp" class="form-text text-muted">* поле обязательно для заполнения.
                 </small>

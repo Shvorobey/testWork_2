@@ -60,7 +60,7 @@
 <!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Alexandr Shvorobey 2018</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Alexandr Shvorobey 2019</p>
     </div>
 </footer>
 
