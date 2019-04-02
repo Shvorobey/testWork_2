@@ -14,7 +14,6 @@
                     <div class="card">
                         <form action="" method="post" enctype="multipart/form-data">
                             @csrf
-
                             <strong> Пользователь:</strong> <br>
                             <hr>
                             <strong>Имя:</strong> <br>

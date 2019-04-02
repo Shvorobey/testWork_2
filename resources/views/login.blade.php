@@ -13,18 +13,6 @@
                 enctype="multipart/form-data" style="margin: 50px auto">
             {{csrf_field()}}
             <div class="form-group">
-                {{--@if ($errors->any())--}}
-                    {{--<div class="alert alert-danger">--}}
-                        {{--{{<li>$msg</li>}}--}}
-                        {{--<li>{{ $msg }}</li>--}}
-                        {{--<ul>--}}
-                            {{--@foreach ($errors->all() as $error)--}}
-                                {{--<li>{{ $error }}</li>--}}
-                            {{--@endforeach--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
-                {{--@endif--}}
-
                 <label for="exampleInputEmail">Введите Email:</label>
                 <input type="email" name="email" class="form-control" id="exampleInputEmail"
                        aria-describedby="emailHelp"
@@ -41,13 +29,10 @@
                 <small id="passwordHelp" class="form-text text-muted">* поле обязательно для заполнения.
                 </small>
                 <br>
-
             </div>
             <button type="submit" class="btn btn-primary">Вход</button>
             <hr>
-
         </form>
-
     </div>
 @endsection
 

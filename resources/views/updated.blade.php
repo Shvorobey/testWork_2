@@ -7,8 +7,6 @@
             <h1> Данные обновлены: </h1>
             <hr>
             <a href={{route('main')}} > На главную </a>
-
-
         </div>
     </div>
 @endsection

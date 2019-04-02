@@ -22,7 +22,6 @@
                         </ul>
                     </div>
                 @endif
-
                 <label for="exampleInputName">Введите Имя:</label>
                 <input type="text" name="name" class="form-control" id="exampleInputName"
                        aria-describedby="nameHelp"
@@ -55,13 +54,10 @@
                 <small id="passwordHelp" class="form-text text-muted">* поле обязательно для заполнения.
                 </small>
                 <br>
-
             </div>
             <button type="submit" class="btn btn-primary">Сохранить</button>
             <hr>
-
         </form>
-
     </div>
 @endsection
 

@@ -9,10 +9,8 @@
 
     <title>@yield ('title')</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
     <link href="/css/blog-home.css" rel="stylesheet">
 </head>
 
@@ -34,7 +32,6 @@
                 <li class="nav-item">
                     <a class="nav-link" style="color:#FFB6C1" href="#">Полезная ссылка 2</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" style="color:#FFB6C1" href="#">Полезная ссылка 3</a>
                 </li>
@@ -44,7 +41,6 @@
 </nav>
 
 <div class="container">
-
     <div class="row">
 
         @yield('content')

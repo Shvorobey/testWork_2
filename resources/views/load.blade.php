@@ -19,7 +19,6 @@
         background: #00FFFF;
         z-index: 99
     }
-
     #preloader_malc div {
         background: #00FFFF;
         width: 200px;
@@ -40,7 +39,6 @@
         margin: auto
     }
 </style>
-
 <script type="text/javascript">
 
     window.onload = function() {
