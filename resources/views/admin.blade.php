@@ -3,8 +3,8 @@
 @section('title', 'Главная')
 @section('content')
     <div class="col-md-8">
-        <h1 class="my-4" style="color:#C71585">Спасибо за регистрацию <br>
-            <small>Введите email и пароль</small>
+        <h1 class="my-4" style="color:#C71585">Кабинет <br>
+            <small>Форма для изменения личных данных</small>
         </h1>
         @include ('load')
 
@@ -14,11 +14,12 @@
                     <div class="card">
                         <form action="" method="post" enctype="multipart/form-data">
                             @csrf
+
                             <strong> Пользователь:</strong> <br>
                             <hr>
                             <strong>Имя:</strong> <br>
                             <input type="text" name="name"
-                                   value="{{old ('name', Session::get('email') )}}"/><br>
+                                   value="{{old ('name', Session::get('name') )}}"/><br>
                             @if ($errors->any('name'))
                                 <div class="alert alert-danger">
                                     <ul>
@@ -41,6 +42,7 @@
                                     </ul>
                                 </div>
                             @endif
+                            <hr>
                             <input type="submit" value="Сохранить"/>
                         </form>
                     </div>

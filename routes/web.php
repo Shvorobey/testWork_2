@@ -20,4 +20,4 @@ Route::post('/login', '\\' . \App\Http\Controllers\loginController::class)->name
 Route::get('/admin', function () { return view('admin'); })->name('admin');
 Route::post('/admin', '\\' . \App\Http\Controllers\adminController::class)->name('user_save');
 
-Route::get('/admin', function () { return view('updated'); })->name('updated');
+Route::get('/updated', function () { return view('updated'); })->name('updated');

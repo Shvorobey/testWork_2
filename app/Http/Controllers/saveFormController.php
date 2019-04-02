@@ -23,7 +23,6 @@ class saveFormController extends Controller
                 'password_1' => ' required | min: 6 | string',
                 'password_2' => ' required | min: 6 | string',
             ]);
-
             $user = new User();
             $user->name = $request->input('name');
             $user->email = $request->input('email');
@@ -32,6 +31,9 @@ class saveFormController extends Controller
 
             if ($password_1 === $password_2) {
                 $user->password = $password_1;
+                session([
+                    'name' => $request->input('name'),
+                ]);
                 try {
                     $user->save();
                 } catch (\Exception $exception) {
